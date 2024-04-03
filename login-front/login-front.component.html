@@ -1,0 +1,74 @@
+<div class="log-form" id="log-form" [class.right-panel-active]="isSignUpActive">
+  <div class="form-container sign-up-container" *ngIf="isSignUpActive">
+    <div class="containerse">
+      <header>login Form Student</header>
+
+      <div class="form-outer">
+        <form (submit)="loginStudent($event)">
+          <div class="inputs">
+            <div class="title">Welcome Again</div>
+            <div class="label">Email</div>
+            <input type="email" #emailS   required />
+            <div class="label">password</div>
+            <input type="password" #passwordS required />
+            <div class="fields">
+              <button type="submit">LOG-IN</button>
+            </div>
+            <div class="reset">
+              <p>
+                Mot de passe oublié ?<a href="/reset-password">
+                  Réinitialisez-le maintenant</a
+                >
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-container sign-in-container" *ngIf="!isSignUpActive">
+    <div class="containerse">
+      <header>Login teacher Form</header>
+
+      <div class="form-outer">
+        <form (submit)="loginTeacher($event)">
+          <div class="inputs">
+            <div class="title">Welcome Again</div>
+            <div class="label">Email</div>
+            <input type="email" #emailT   required />
+            <div class="label">password</div>
+            <input type="password" #passwordT required />
+            <div class="fields">
+              <button type="submit">LOG-IN</button>
+            </div>
+            <div class="reset">
+              <p>
+                Mot de passe oublié ?<a href="/reset-password">
+                  Réinitialisez-le maintenant</a
+                >
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login with your personal info</p>
+        <button class="ghost" (click)="toggleSignUp()" id="signIn">Sign In</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start the journey with us</p>
+        <button class="ghost" (click)="toggleSignUp()" id="signUp">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+

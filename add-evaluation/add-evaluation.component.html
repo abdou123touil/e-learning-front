@@ -1,0 +1,110 @@
+<app-header></app-header>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <!--- <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section">Table #03</h2>
+            </div>-->
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="text-center mb-4">Please Make an Evaluation to can know more about your opinion</h4>
+        <form [formGroup]="evaluationForm" (ngSubmit)="onSubmit()">
+          <label class="custom-labelC" for="courses">Choose a Course:</label>
+  <select  class="custom-select" id="courses" name="courses">
+    <option>course</option>
+  </select><br><br>
+  <select  class="custom-select" id="teacher" name="teacher" >
+    <option >teacher</option>
+  </select>
+
+          <div class="table-wrap">
+            <table class="table">
+              <thead class="thead-primary">
+                <tr>
+                  <th><strong>Questions</strong></th>
+                  <th><Strong>Evaluations</Strong></th>
+
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <th scope="row" class="scope">
+                    The presentation of the course</th>
+
+                  <td><input type="radio" formControlName="Question1" >1
+                    <input type="radio" formControlName="Question1" >2
+                    <input type="radio" formControlName="Question1" >3
+                    <input type="radio" formControlName="Question1" >4
+                  </td>
+
+                </tr>
+                <tr>
+                  <th scope="row" class="scope">
+                    The adopted pedagogy</th>
+                  <td><input type="radio" formControlName="Question2" >1
+                    <input type="radio" formControlName="Question2" >2
+                    <input type="radio" formControlName="Question2" >3
+                    <input type="radio" formControlName="Question2" >4
+                  </td>
+
+                </tr>
+                <tr>
+                  <th scope="row" class="scope">The adaptation of learning activities to the course objectives</th>
+                  <td><input type="radio" formControlName="Question3" >1
+                    <input type="radio" formControlName="Question3" >2
+                    <input type="radio" formControlName="Question3" >3
+                    <input type="radio" formControlName="Question3" >4
+                  </td>
+
+                </tr>
+                <tr>
+                  <th scope="row" class="scope">The workload associated with the course</th>
+                  <td><input type="radio" formControlName="Question4" >1
+                    <input type="radio" formControlName="Question4" >2
+                    <input type="radio" formControlName="Question4" >3
+                    <input type="radio" formControlName="Question4" >4
+                  </td>
+
+                </tr>
+                <tr>
+                  <th scope="row" class="scope">
+                    The understanding of the teacher</th>
+                  <td><input type="radio" formControlName="Question5" >1
+                    <input type="radio" formControlName="Question5" >2
+                    <input type="radio" formControlName="Question5" >3
+                    <input type="radio" formControlName="Question5" >4
+                  </td>
+
+                </tr>
+                <tr>
+                  <th scope="row" class="scope">
+                    The availability of pedagogical resources</th>
+                  <td><input type="radio" formControlName="Question6" >1
+                    <input type="radio" formControlName="Question6" >2
+                    <input type="radio" formControlName="Question6" >3
+                    <input type="radio" formControlName="Question6" >4
+                  </td>
+
+                </tr>
+
+              </tbody>
+            </table>
+            <label for="avis" style="font-weight: bold;">you want to add something :</label><br> <textarea
+              formControlName="description" id="description" name="description" rows="4" cols="50" ></textarea>
+            <br>
+            <div style="text-align: right;">
+              <button type="submit" class="get-started-btns">
+                Send
+              </button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
