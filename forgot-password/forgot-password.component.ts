@@ -12,7 +12,7 @@ export class ForgotPasswordComponent {
   email: string = '';
   emailInputVisible = true;
   tokenInputVisible = false;
-  resetPasswordInputVisible = true;
+  resetPasswordInputVisible = false;
   errorMessage = '';
   tokenErrorMessage = '';
   resetPasswordErrorMessage = '';
