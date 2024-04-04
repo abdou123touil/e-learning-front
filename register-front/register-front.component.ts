@@ -135,6 +135,7 @@ export class RegisterFrontComponent implements OnInit{
       .subscribe(
         response => {
           window.alert('teacher registered succssfuly');
+          this.router.navigate(['user/RegisterFront']);
         },
         error => {
 
@@ -176,6 +177,7 @@ export class RegisterFrontComponent implements OnInit{
       .subscribe(
         response => {
           window.alert('student registered succssfuly');
+          this.router.navigate(['user/RegisterFront']);
         },
         error => {
           if (error.message) {
