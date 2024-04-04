@@ -83,7 +83,10 @@ justify-content: center;
   height: 50%;
   transition: margin-left 0.3s ease-in-out;
 }
-
+.reset p a {
+  cursor: pointer;
+  color: #FF4B2B;
+} 
 .form-outer form .page .title {
   text-align: left;
   font-size: 15px;

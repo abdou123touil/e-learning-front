@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
@@ -43,21 +43,14 @@ export class LoginFrontComponent implements OnInit{
       response => {
         console.log('Login response:', response);
         console.log(response.isApproved);
-        if (response) {
-          // User is verified
-
-            window.alert('teacher is logged in');
+        if (response ) {
+          if (!response.isVerfied){
+            window.alert('please verify your email');
           }
-         else {
+          else{this.router.navigate(['/home']);}
+        } else {
           // User is not verified
-          window.alert('User is not verified');
-        }
-        if (response.isApproved){
-          window.alert('teacher is approved');
-          console.log(response.isApproved);
-        }
-        else{
-          window.alert('teacher is not aproved');
+          window.alert('email or password incorrect');
         }
       },
       error => {
@@ -77,12 +70,15 @@ export class LoginFrontComponent implements OnInit{
       response => {
         console.log('Login response:', response);
         if (response ) {
-          // User is verified
-          window.alert('Student Login successful');
+          if (response.isVerfied){
+            window.alert('please verify your email');
+          }
+          else{this.router.navigate(['/home']);}
         } else {
           // User is not verified
           window.alert('email or password incorrect');
         }
+       
       },
       error => {
         console.error('Login error:', error);
@@ -95,7 +91,12 @@ export class LoginFrontComponent implements OnInit{
       }
     );
   }
-
+  restlink(){
+    this.router.navigate(['user/forgot-pass']);
+  }
+  registerlink(){
+    this.router.navigate(['user/RegisterFront']);
+  }
 
 ngOnInit(): void {
 
