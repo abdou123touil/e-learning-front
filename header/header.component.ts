@@ -8,7 +8,7 @@ import { Router, RouterLink } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  loggedInUserName: string | null = null;
+ 
 
   constructor(private studentService: StudentService,private teacherService: TeacherService, private router: Router) { }
 
@@ -18,22 +18,24 @@ export class HeaderComponent implements OnInit {
       username => {
         
         this.loggedInUserName = username;
+        console.log(username);
       }
     );
     this.teacherService.loggedInUserName.subscribe(
       Username => {
         
         this.loggedInUserName = Username;
+        console.log(Username);
       }
     );
   }
-
+  loggedInUserName: string | null = null;
   isLoggedInS(): boolean {
-    console.log(this.studentService.isLoggedIn());
+ 
     return this.studentService.isLoggedIn();
   }
   isLoggedInT(): boolean {
-    console.log(this.teacherService.isLoggedIn());
+   
     return this.teacherService.isLoggedIn();
   }
   logoutS(): void {

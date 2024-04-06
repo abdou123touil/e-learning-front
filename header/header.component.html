@@ -61,11 +61,11 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <div class="container d-flex align-items-center">
+      <div class="containers d-flex align-items-center">
         <nav id="navbar" class="navbar order-last order-lg-0">
           <ul *ngIf="isLoggedInS()||isLoggedInT(); else loggedOutMenu">
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 {{ loggedInUserName }}
               </a>
               <ul class="dropdown-menu">
@@ -75,7 +75,7 @@
             </li>
           </ul>
           <ng-template #loggedOutMenu>
-            <li><a (click)="loginpage()" class="get-started-btn">Get Started</a></li>
+            <li><a (click)="loginpage()" class="get-started-btn" ><span>Get Started</span></a></li>
           </ng-template>
         </nav>
       </div>

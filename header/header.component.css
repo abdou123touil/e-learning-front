@@ -168,7 +168,11 @@ h6 {
 .navbar {
   padding: 0;
 }
-
+.containers li { list-style: none;}
+.containers li span{
+  position: relative;
+  right: 20%;
+}
 .navbar ul {
   margin: 0;
   padding: 0;

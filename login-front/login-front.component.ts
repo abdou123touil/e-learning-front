@@ -42,7 +42,7 @@ export class LoginFrontComponent implements OnInit{
     this.teacherService.login(this.emailTInput.nativeElement.value, this.passwordTInput.nativeElement.value).subscribe(
       response => {
         console.log('Login response:', response);
-        console.log(response.isApproved);
+        console.log(response.approved);
         if (response ) {
           if (!response.isVerfied){
             window.alert('please verify your email');
@@ -70,7 +70,8 @@ export class LoginFrontComponent implements OnInit{
       response => {
         console.log('Login response:', response);
         if (response ) {
-          if (response.isVerfied){
+          console.log(response.verfied);
+          if (!response.verfied){
             window.alert('please verify your email');
           }
           else{this.router.navigate(['/home']);}
